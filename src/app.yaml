@@ -1,0 +1,15 @@
+application: gae-go-mvm    # change here
+vm: true
+version: 1
+runtime: go
+api_version: go1
+
+manual_scaling:
+  instances: 1
+vm_settings:
+  machine_type: n1-standard-1
+  apt_get_install: redis-server vim
+
+handlers:
+- url: /.*
+  script: _go_app
